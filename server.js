@@ -3,6 +3,7 @@ const app = express();
 const PORT = 8000;
 const cors = require('cors')
 app.use(cors())
+app.use(express.static("public"));
 
 const sharks = {
     'great white shark':{ 
@@ -33,6 +34,7 @@ const sharks = {
 }
 app.get('/',(request,response)=>{
 response.sendFile(__dirname + '/index.html')
+console.log(request)
 })
 app.get('/api/:sharkName', (request,response)=>{
 const sharkName = request.params.sharkName.toLowerCase()

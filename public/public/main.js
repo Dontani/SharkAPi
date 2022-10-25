@@ -1,5 +1,7 @@
+document.querySelector('button').addEventListener('click',apiRequest)
+
 async function apiRequest(){
-    const sharkName = document.querySelector('input'),value
+    const sharkName = document.querySelector('input').value
     try {
         const response = await fetch (`https://don-shark-api.herokuapp.com/api/${sharkName}`)
         const data = await response.json()
